@@ -1,5 +1,15 @@
 Release history for HTML-Tiny
 
+1.06  Wed 31 Aug 2022
+	- Updated packaging and package metadata
+	- Minimum Perl version requirement raised to 5.6
+	- New shortcut methods for HTML5 tags as well as previously missing tags:
+	  applet article aside audio bdi blink canvas center data datalist details
+	  dialog dir embed figcaption figure font footer header hgroup keygen main
+	  mark marquee menu menuitem meter nav nobr output picture portal progress
+	  rb rp rt rtc ruby s section slot source strike summary template time
+	  track u video wbr xmp
+
 1.05  Sun 08 Mar 2009
 	- Add support for TO_JSON in json_encode
 
