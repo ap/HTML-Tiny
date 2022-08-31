@@ -15,15 +15,27 @@ our $VERSION = '1.05';
 BEGIN {
 
   # http://www.w3schools.com/tags/default.asp
-  for my $tag (
-    qw( a abbr acronym address area b base bdo big blockquote body br
-    button caption cite code col colgroup dd del div dfn dl dt em
-    fieldset form frame frameset h1 h2 h3 h4 h5 h6 head hr html i
-    iframe img input ins kbd label legend li link map meta noframes
-    noscript object ol optgroup option p param pre q samp script select
-    small span strong style sub sup table tbody td textarea tfoot th
-    thead title tr tt ul var )
-   ) {
+  for my $tag ( qw(
+    a abbr acronym address area
+    b base bdo big blockquote body br button
+    caption cite code col colgroup
+    dd del dfn div dl dt
+    em
+    fieldset form frame frameset
+    h1 h2 h3 h4 h5 h6 head hr html
+    i iframe img input ins
+    kbd
+    label legend li link
+    map meta
+    noframes noscript
+    object ol optgroup option
+    p param pre
+    q
+    samp script select small span strong style sub sup
+    table tbody td textarea tfoot th thead title tr tt
+    ul
+    var
+  ) ) {
     no strict 'refs';
     *$tag = sub { shift->auto_tag( $tag, @_ ) };
   }
