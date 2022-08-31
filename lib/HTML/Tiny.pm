@@ -14,27 +14,30 @@ our $VERSION = '1.05';
 
 BEGIN {
 
-  # http://www.w3schools.com/tags/default.asp
+  # https://developer.mozilla.org/en-US/docs/Web/HTML/Element
   for my $tag ( qw(
-    a abbr acronym address area
-    b base bdo big blockquote body br button
-    caption cite code col colgroup
-    dd del dfn div dl dt
-    em
-    fieldset form frame frameset
-    h1 h2 h3 h4 h5 h6 head hr html
+    a abbr acronym address applet area article aside audio
+    b base bdi bdo big blink blockquote body br button
+    canvas caption center cite code col colgroup
+    data datalist dd del details dfn dialog dir div dl dt
+    em embed
+    fieldset figcaption figure font footer form frame frameset
+    h1 h2 h3 h4 h5 h6 head header hgroup hr html
     i iframe img input ins
-    kbd
+    kbd keygen
     label legend li link
-    map meta
-    noframes noscript
-    object ol optgroup option
-    p param pre
+    main map mark marquee menu menuitem meta meter
+    nav nobr noframes noscript
+    object ol optgroup option output
+    p param picture portal pre progress
     q
-    samp script select small span strong style sub sup
-    table tbody td textarea tfoot th thead title tr tt
-    ul
-    var
+    rb rp rt rtc ruby
+    s samp script section select slot small source spacer span strike strong style sub summary sup
+    table tbody td template textarea tfoot th thead time title tr track tt
+    u ul
+    var video
+    wbr
+    xmp
   ) ) {
     no strict 'refs';
     *$tag = sub { shift->auto_tag( $tag, @_ ) };
@@ -43,7 +46,8 @@ BEGIN {
 
 # Tags that are closed (<br /> versus <br></br>)
 my @DEFAULT_CLOSED
- = qw( area base br col frame hr img input link meta param );
+  # https://developer.mozilla.org/en-US/docs/Glossary/Empty_element
+  = qw( area base br col embed frame hr iframe img input keygen link meta param source track wbr );
 
 # Tags that get a trailing newline
 my @DEFAULT_NEWLINE = qw( html head body div p tr table );
@@ -500,17 +504,21 @@ sub stringify {
 In addition to the methods described above C<< HTML::Tiny >> provides
 all of the following HTML generation methods:
 
-  a abbr acronym address area b base bdo big blockquote body br
-  button caption cite code col colgroup dd del div dfn dl dt em
-  fieldset form frame frameset h1 h2 h3 h4 h5 h6 head hr html i
-  iframe img input ins kbd label legend li link map meta noframes
-  noscript object ol optgroup option p param pre q samp script select
-  small span strong style sub sup table tbody td textarea tfoot th
-  thead title tr tt ul var
+  a abbr acronym address applet area article aside audio b base bdi bdo big
+  blink blockquote body br button canvas caption center cite code col colgroup
+  data datalist dd del details dfn dialog dir div dl dt em embed fieldset
+  figcaption figure font footer form frame frameset h1 h2 h3 h4 h5 h6 head
+  header hgroup hr html i iframe img input ins kbd keygen label legend li link
+  main map mark marquee menu menuitem meta meter nav nobr noframes noscript
+  object ol optgroup option output p param picture portal pre progress q rb rp
+  rt rtc ruby s samp script section select slot small source spacer span strike
+  strong style sub summary sup table tbody td template textarea tfoot th thead
+  time title tr track tt u ul var video wbr xmp
 
 The following methods generate closed XHTML (<br />) tags by default:
 
-  area base br col frame hr img input meta param
+  area base br col embed frame hr iframe img input keygen link meta param
+  source track wbr
 
 So:
 
