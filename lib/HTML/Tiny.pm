@@ -1,6 +1,7 @@
+use strict; use warnings;
+
 package HTML::Tiny;
 
-use strict;
 use Carp;
 
 =head1 NAME
@@ -13,8 +14,7 @@ This document describes HTML::Tiny version 1.05
 
 =cut
 
-use vars qw/$VERSION/;
-$VERSION = '1.05';
+our $VERSION = '1.05';
 
 BEGIN {
 

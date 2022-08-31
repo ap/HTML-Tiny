@@ -1,5 +1,4 @@
-use strict;
-#use warnings;
+use 5.006; use strict; use warnings;
 use ExtUtils::MakeMaker;
 
 eval 'use ExtUtils::MakeMaker::Coverage';
@@ -13,6 +12,7 @@ WriteMakefile(
   VERSION_FROM  => 'lib/HTML/Tiny.pm',
   ABSTRACT_FROM => 'lib/HTML/Tiny.pm',
   PL_FILES      => {},
+  MIN_PERL_VERSION => '5.006',
   TEST_REQUIRES => { 'Test::More' => 0, },
   dist          => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
   clean => { FILES => 'HTML-Tiny-*' },

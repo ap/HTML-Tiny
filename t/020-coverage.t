@@ -1,4 +1,4 @@
-use strict;
+use strict; use warnings;
 use Test::More;
 use HTML::Tiny;
 
