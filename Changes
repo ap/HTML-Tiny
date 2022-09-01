@@ -1,5 +1,9 @@
 Release history for HTML-Tiny
 
+1.07  Thu 01 Sep 2022
+	- No functional changes
+	- POD error fix
+
 1.06  Wed 31 Aug 2022
 	- Updated packaging and package metadata
 	- Minimum Perl version requirement raised to 5.6
