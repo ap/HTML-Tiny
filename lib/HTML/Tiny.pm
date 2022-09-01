@@ -791,4 +791,6 @@ An C<< HTML::Tiny >> is a blessed hash ref.
 Subclass C<validate_tag> to throw an error or issue a warning when an
 attempt is made to generate an invalid tag.
 
+=back
+
 =cut
