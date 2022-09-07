@@ -10,7 +10,7 @@ HTML::Tiny - Lightweight, dependency free HTML/XML generation
 
 =cut
 
-our $VERSION = '1.07';
+our $VERSION = '1.08';
 
 BEGIN {
 
